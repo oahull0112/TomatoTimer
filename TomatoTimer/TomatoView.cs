@@ -50,18 +50,18 @@ namespace TomatoTimer
 
         void timer_Tick(object sender, EventArgs e)
         {
-            isTimeLeft = Convert.ToBoolean((remainingTime.CompareTo(noTime)));
-            //  label2.Text = DateTime.Now.ToString();
+            isTimeLeft = Convert.ToBoolean((remainingTime.CompareTo(noTime))); // check if timer is up
             if (isTimeRunning & isTimeLeft)
             {
                 button2.Text = "Pause";
-                remainingTime -= TimeSpan.FromSeconds(1); // then show the countdown timer
-                label2.Text = remainingTime.ToString("mm\\:ss");
+                remainingTime -= TimeSpan.FromSeconds(1);
+                label2.Text = remainingTime.ToString("mm\\:ss"); // update and show the time remaining
             }
             else if (!isTimeLeft)
             {
                 MessageBox.Show("Time's up!");
                 isTimeRunning = false;
+                // here call control delegate to log the event
             }
             else
             {

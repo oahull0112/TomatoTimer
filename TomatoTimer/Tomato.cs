@@ -3,23 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace TomatoTimer
 {
-    class TomatoControl
+    class Tomato
     {
         private TomatoType tomatoType;
+        private DateTime createDate;
+        private DateTime endDate;
 
-        public TomatoControl()
-        {
-            tomatoType = TomatoType.Tomato; // default is Tomato
-        }
-
-        public void UpdateTomatoType(TomatoType tType)
+        public Tomato(TomatoType tType)
         {
             tomatoType = tType;
+            createDate = DateTime.Now;
         }
-
     }
 }

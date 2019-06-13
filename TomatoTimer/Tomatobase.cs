@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TomatoTimer
 {
-    class TomatoModel
+    class Tomatobase
     {
+        // this is a bad pun on database
     }
 }

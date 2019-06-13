@@ -46,8 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EndTomatoDelegate.cs" />
+    <Compile Include="Tomato.cs" />
     <Compile Include="TomatoControl.cs" />
-    <Compile Include="TomatoModel.cs" />
+    <Compile Include="Tomatobase.cs" />
+    <Compile Include="TomatoType.cs" />
     <Compile Include="TomatoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +59,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateTomatoTypeDelegate.cs" />
     <EmbeddedResource Include="TomatoView.resx">
       <DependentUpon>TomatoView.cs</DependentUpon>
     </EmbeddedResource>

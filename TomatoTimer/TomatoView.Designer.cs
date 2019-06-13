@@ -33,6 +33,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.shortBreakButton = new System.Windows.Forms.Button();
+            this.longBreakButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -85,11 +87,33 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // shortBreakButton
+            // 
+            this.shortBreakButton.Location = new System.Drawing.Point(32, 190);
+            this.shortBreakButton.Name = "shortBreakButton";
+            this.shortBreakButton.Size = new System.Drawing.Size(110, 40);
+            this.shortBreakButton.TabIndex = 6;
+            this.shortBreakButton.Text = "Short Break";
+            this.shortBreakButton.UseVisualStyleBackColor = true;
+            this.shortBreakButton.Click += new System.EventHandler(this.shortBreakButton_Click);
+            // 
+            // longBreakButton
+            // 
+            this.longBreakButton.Location = new System.Drawing.Point(188, 190);
+            this.longBreakButton.Name = "longBreakButton";
+            this.longBreakButton.Size = new System.Drawing.Size(110, 40);
+            this.longBreakButton.TabIndex = 7;
+            this.longBreakButton.Text = "Long Break";
+            this.longBreakButton.UseVisualStyleBackColor = true;
+            this.longBreakButton.Click += new System.EventHandler(this.longBreakButton_Click);
+            // 
             // TomatoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 190);
+            this.ClientSize = new System.Drawing.Size(359, 332);
+            this.Controls.Add(this.longBreakButton);
+            this.Controls.Add(this.shortBreakButton);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
@@ -109,6 +133,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button shortBreakButton;
+        private System.Windows.Forms.Button longBreakButton;
     }
 }
 

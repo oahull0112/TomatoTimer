@@ -12,10 +12,11 @@ namespace TomatoTimer
 {
     public partial class TomatoView : Form
     {
-        private TimeSpan remainingTime = new TimeSpan(0,25, 1);
+        private TimeSpan remainingTime = new TimeSpan(0, 25, 1);
         private TimeSpan noTime = new TimeSpan(0, 0, 0);
         private Timer timer = new Timer();
         private bool isTimeRunning = true;
+        private bool isTimeLeft = true;
 
         public TomatoView()
         {
@@ -49,16 +50,22 @@ namespace TomatoTimer
 
         void timer_Tick(object sender, EventArgs e)
         {
+            isTimeLeft = Convert.ToBoolean((remainingTime.CompareTo(noTime)));
             //  label2.Text = DateTime.Now.ToString();
-            if (isTimeRunning)
+            if (isTimeRunning & isTimeLeft)
             {
                 button2.Text = "Pause";
                 remainingTime -= TimeSpan.FromSeconds(1); // then show the countdown timer
                 label2.Text = remainingTime.ToString("mm\\:ss");
             }
+            else if (!isTimeLeft)
+            {
+                MessageBox.Show("Time's up!");
+                isTimeRunning = false;
+            }
             else
             {
-                button2.Text = "Resume";
+                
             }
         }
 
@@ -73,8 +80,28 @@ namespace TomatoTimer
             if (isTimeRunning)
             {
                 isTimeRunning = false;
+                button2.Text = "Resume";
             }
             else
+            {
+                isTimeRunning = true;
+                button2.Text = "Pause";
+            }
+        }
+
+        private void shortBreakButton_Click(object sender, EventArgs e)
+        {
+            remainingTime = new TimeSpan(0, 5, 1);
+            if (!isTimeRunning)
+            {
+                isTimeRunning = true;
+            }
+        }
+
+        private void longBreakButton_Click(object sender, EventArgs e)
+        {
+            remainingTime = new TimeSpan(0, 15, 1);
+            if (!isTimeRunning)
             {
                 isTimeRunning = true;
             }

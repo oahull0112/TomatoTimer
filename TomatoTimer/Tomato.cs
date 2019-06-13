@@ -17,5 +17,22 @@ namespace TomatoTimer
             tomatoType = tType;
             createDate = DateTime.Now;
         }
+
+        public void SetTomatoType(TomatoType tType)
+        {
+            tomatoType = tType;
+        }
+
+        public void naturalDeath()
+        {
+            // tomato died because timer ran out
+            endDate = DateTime.Now;
+        }
+
+        public void EatTomato()
+        {
+            // tomato died because user chose a new timer type
+            tomatoType = TomatoType.Eaten;
+        }
     }
 }

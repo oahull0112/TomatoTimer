@@ -9,11 +9,12 @@ namespace TomatoTimer
 {
     class TomatoControl
     {
-        private TomatoType tomatoType;
+        private Tomato currentTomato;
+        private Tomatobase tomatoBase; // database of successfully completed tomatoes
 
         public TomatoControl()
         {
-            tomatoType = TomatoType.Tomato; // default is Tomato
+            currentTomato.tomatoType = TomatoType.Tomato; // default is Tomato
         }
 
         public void UpdateTomatoType(TomatoType tType)

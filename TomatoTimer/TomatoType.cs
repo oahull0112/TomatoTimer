@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace TomatoTimer
 {
-    public enum TomatoType { Tomato, ShortBreak, LongBreak, NoType };
+    public enum TomatoType { Tomato, ShortBreak, LongBreak, NoType, Eaten };
 }

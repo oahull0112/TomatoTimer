@@ -8,6 +8,6 @@ namespace TomatoTimer
 {
     class Tomatobase
     {
-        // this is a bad pun on database
+        private List<Tomato> tomatoLog = new List<Tomato>();
     }
 }

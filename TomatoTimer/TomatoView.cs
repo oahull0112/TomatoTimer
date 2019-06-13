@@ -12,11 +12,24 @@ namespace TomatoTimer
 {
     public partial class TomatoView : Form
     {
+        private TimeSpan remainingTime = new TimeSpan(0,25, 1);
+        private TimeSpan noTime = new TimeSpan(0, 0, 0);
+        private Timer timer = new Timer();
+        private bool isTimeRunning = true;
+
         public TomatoView()
         {
             InitializeComponent();
             label1.Text = "Time remaining: ";
 
+            timer.Tick += new EventHandler(timer_Tick); // Everytime timer ticks, timer_Tick will be called
+            timer.Interval = (1000) * (1);              // Timer will tick evert second
+            timer.Enabled = true;                       // Enable the timer
+            timer.Start();                              // Start the timer
+
+            label2.Text = String.Empty;
+
+            this.Controls.Add(label2);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -26,17 +39,45 @@ namespace TomatoTimer
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            remainingTime = new TimeSpan(0, 25, 1);
+            if (!isTimeRunning)
+            {
+                isTimeRunning = true;
+            }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+
+        void timer_Tick(object sender, EventArgs e)
         {
-
+            //  label2.Text = DateTime.Now.ToString();
+            if (isTimeRunning)
+            {
+                button2.Text = "Pause";
+                remainingTime -= TimeSpan.FromSeconds(1); // then show the countdown timer
+                label2.Text = remainingTime.ToString("mm\\:ss");
+            }
+            else
+            {
+                button2.Text = "Resume";
+            }
         }
+
 
         private void button4_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("In progress!");
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (isTimeRunning)
+            {
+                isTimeRunning = false;
+            }
+            else
+            {
+                isTimeRunning = true;
+            }
         }
     }
 }
